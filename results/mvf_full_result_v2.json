@@ -1,0 +1,8 @@
+{
+  "model": "MVF baseline",
+  "accuracy": 0.5308,
+  "auc": 0.5681,
+  "train_samples": 4791,
+  "val_samples": 1200,
+  "observation": "moderate multimodal performance"
+}

@@ -1,0 +1,11 @@
+{
+  "model": "MVF baseline",
+  "setup": "fuller training run",
+  "train_samples": 4791,
+  "val_samples": 1200,
+  "epochs": 10,
+  "batch_size": 8,
+  "auc": 0.5680636363636363,
+  "accuracy": 0.5308333333333334,
+  "checkpoint": "not_found"
+}

@@ -1,0 +1,7 @@
+{
+  "model": "MLP baseline",
+  "accuracy": 0.908,
+  "balanced_accuracy": 0.3333,
+  "macro_f1": 0.3173,
+  "observation": "collapsed to class 2"
+}
