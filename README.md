@@ -81,7 +81,7 @@ TRM-VFD/
 ## Installation
 
 bash
-git clone https://github.com/<your-username>/TRM-VFD.git
+git clone https://github.com/<your-username>/TRM-VFD.git](https://github.com/Gurram-sravani/ijcb-deepfake-detection.git
 cd TRM-VFD
 
 pip install -r requirements.txt
