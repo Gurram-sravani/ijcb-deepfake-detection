@@ -1,0 +1,13 @@
+MVF Baseline Results
+
+Train Samples: 4791
+Validation Samples: 1200
+
+Accuracy: 0.5308
+AUC: 0.5681
+
+Observations:
+- Model trained for only 10 epochs (undertrained)
+- Performance slightly above random (AUC ~0.56)
+- Needs tuning (20–30 epochs, LR scheduling)
+- Confirms multimodal fusion helps but is not sufficient yet
