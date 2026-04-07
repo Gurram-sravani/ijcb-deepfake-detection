@@ -1,8 +1,7 @@
 # TRM-VFD: Temporal Recursive Model for Video-Face Deepfake Detection
 
 > **Recursive Cross-Modal Biometric Identity Verification for Robust Audiovisual Deepfake Detection**
-> Sravani Gurram · Chinni Krishna Bhukya — San José State University
-> Target Venue: IEEE/IAPR IJCB 2026
+> Sravani Gurram — San José State University
 
 ##  Overview
 
@@ -178,8 +177,7 @@ python finetune_deepfake.py \
 
 ## 🔗 Code Repository
 
-https://github.com/<your-username>/TRM-VFD
-
+https://github.com/Gurram-sravani/ijcb-deepfake-detection/blob/main/notebooks/TRM_DETECTION.ipynb
 
 ##  License
 
