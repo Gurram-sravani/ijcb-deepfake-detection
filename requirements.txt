@@ -1,40 +1,38 @@
-# Core Deep Learning
+# Core ML
 torch>=2.0.0
 torchvision>=0.15.0
 torchaudio>=2.0.0
-
-# Data Processing
-numpy>=1.23
-pandas>=1.5
-tqdm>=4.65
-
-# Image & Video Processing
-opencv-python-headless>=4.8
-Pillow>=9.5
-ffmpeg-python>=0.2.0
-
-# Audio Processing
+ 
+# Face encoder
+insightface>=0.7.3
+onnxruntime-gpu>=1.16.0
+ 
+# Voice encoder
+speechbrain>=1.0.0
+ 
+# Data + metrics
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+scipy>=1.11.0
+ 
+# Vision
+opencv-python>=4.8.0
+Pillow>=10.0.0
+ 
+# Audio
 librosa>=0.10.0
-soundfile>=0.12.1
-
-# Machine Learning / Evaluation
-scikit-learn>=1.2
-
-# Visualization (EDA)
-matplotlib>=3.7
-seaborn>=0.12
-
-# Config / Utilities
+soundfile>=0.12.0
+ 
+# Plotting
+matplotlib>=3.7.0
+seaborn>=0.13.0
+ 
+# Utilities
+tqdm>=4.65.0
 pyyaml>=6.0
-dotmap>=1.3
-
-# Optional (for embeddings / future TRM)
-insightface==0.7.3
-onnxruntime-gpu
-
-# Speech models
-speechbrain>=0.5
-
-# Dataset download (optional)
-gdown
-kaggle
+dotmap>=1.3.30
+einops>=0.7.0
+timm>=0.9.0
+yacs>=0.1.8
+pydub>=0.25.0
