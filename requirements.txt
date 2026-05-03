@@ -1,38 +1,113 @@
-# Core ML
-torch>=2.0.0
-torchvision>=0.15.0
-torchaudio>=2.0.0
- 
-# Face encoder
-insightface>=0.7.3
-onnxruntime-gpu>=1.16.0
- 
-# Voice encoder
-speechbrain>=1.0.0
- 
-# Data + metrics
-numpy>=1.24.0
-pandas>=2.0.0
-scikit-learn>=1.3.0
-scipy>=1.11.0
- 
-# Vision
-opencv-python>=4.8.0
-Pillow>=10.0.0
- 
-# Audio
-librosa>=0.10.0
-soundfile>=0.12.0
- 
-# Plotting
-matplotlib>=3.7.0
-seaborn>=0.13.0
- 
+# requirements.txt
+# Identity-Disjoint Audio-Visual Deepfake Detection
+# IJCB 2026
+#
+# Python 3.10 required. Python 3.11+ not tested.
+# GPU: NVIDIA T4 or better, CUDA 11.8 or 12.1
+#
+# Install PyTorch separately before running this file.
+#
+# CUDA 11.8:
+#   pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu118
+#
+# CUDA 12.1:
+#   pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu121
+#
+# CPU only:
+#   pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0
+#
+# Then run:
+#   pip install -r requirements.txt
+
+
+# Deep learning utilities
+timm==0.9.12
+einops==0.7.0
+
+
+# Face embedding - ArcFace IR-SE50
+# Requires cmake and libgl1-mesa-glx before installing:
+#   sudo apt-get install -y cmake libgl1-mesa-glx
+insightface==0.7.3
+
+# Install either onnxruntime-gpu OR onnxruntime, never both.
+# CUDA 11.8 / 12.x:  pip install onnxruntime-gpu==1.16.3
+# CPU only:           pip install onnxruntime==1.16.3
+onnxruntime-gpu==1.16.3
+
+
+# Voice embedding - ECAPA-TDNN
+# SpeechBrain 1.0 changed the SpeakerRecognition import path.
+# The notebook uses: from speechbrain.inference.speaker import SpeakerRecognition
+# Do not downgrade below 1.0.0.
+speechbrain==1.0.0
+huggingface_hub==0.20.3
+requests==2.31.0
+
+
+# Audio processing
+# torchaudio is included in the PyTorch install above.
+# torchaudio requires ffmpeg on Linux: sudo apt-get install -y ffmpeg
+librosa==0.10.1
+soundfile==0.12.1
+pydub==0.25.1
+
+
+# Data science
+numpy==1.24.4
+pandas==2.1.4
+scikit-learn==1.4.0
+scipy==1.11.4
+
+
+# Imbalanced learning
+# Used only in supplementary cells 45-52.
+# Not used for any main results.
+imbalanced-learn==0.12.0
+
+
+# Visualisation
+matplotlib==3.8.2
+seaborn==0.13.0
+Pillow==10.2.0
+
+
+# Computer vision
+# Installs as: import cv2
+opencv-python==4.9.0.80
+
+
 # Utilities
-tqdm>=4.65.0
-pyyaml>=6.0
-dotmap>=1.3.30
-einops>=0.7.0
-timm>=0.9.0
-yacs>=0.1.8
-pydub>=0.25.0
+pyyaml==6.0.1
+yacs==0.1.8
+dotmap==1.3.31
+tqdm==4.66.1
+
+
+# Notes: 
+# dotmap 1.3.30 has a breaking change with Python 3.10.
+# Use 1.3.31 or later.
+#
+# scipy is required internally by scikit-learn metrics.
+# Install the pinned version to avoid silent API differences.
+#
+# MVF baseline requires a git clone and config patch.
+# See notebook Cell 14 for full setup. The repo is:
+#   github.com/xaCheng1996/MVF
+#
+# ECAPA-TDNN runs on CPU by design for compatibility.
+# Feature extraction takes 6-8 hours on a T4 GPU machine.
+# Run it once and cache the .npy files to Google Drive.
+# All subsequent runs load from cache in seconds.
+#
+# System dependencies for Linux before pip install:
+#   sudo apt-get update
+#   sudo apt-get install -y cmake libgl1-mesa-glx ffmpeg libsndfile1
+#
+# Reproducibility seeds used in all experiments: 42, 123, 456
+# Set in notebook Cell 1 using:
+#   torch.manual_seed(seed)
+#   torch.cuda.manual_seed_all(seed)
+#   numpy.random.seed(seed)
+#   random.seed(seed)
+#   torch.backends.cudnn.deterministic = True
